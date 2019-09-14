@@ -10,5 +10,5 @@ import Foundation
 
 protocol TableViewViewModelProtocol {
     func numberOfRows() -> Int
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellProtocol? 
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellProtocol?
 }

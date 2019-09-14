@@ -16,6 +16,9 @@
 		B08A2CD9232D2B08009994F2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A2CD8232D2B08009994F2 /* TableViewCell.swift */; };
 		B08A2CDC232D2B71009994F2 /* TableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A2CDB232D2B71009994F2 /* TableViewCellProtocol.swift */; };
 		B08A2CDE232D2C94009994F2 /* TableViewViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A2CDD232D2C94009994F2 /* TableViewViewModelProtocol.swift */; };
+		B08A2CE2232D2DA7009994F2 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A2CE1232D2DA7009994F2 /* TableViewModel.swift */; };
+		B08A2CE4232D2FDA009994F2 /* TableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A2CE3232D2FDA009994F2 /* TableViewCellViewModel.swift */; };
+		B08A2CE6232D3307009994F2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A2CE5232D3307009994F2 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		B08A2CD8232D2B08009994F2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B08A2CDB232D2B71009994F2 /* TableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellProtocol.swift; sourceTree = "<group>"; };
 		B08A2CDD232D2C94009994F2 /* TableViewViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModelProtocol.swift; sourceTree = "<group>"; };
+		B08A2CE1232D2DA7009994F2 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		B08A2CE3232D2FDA009994F2 /* TableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModel.swift; sourceTree = "<group>"; };
+		B08A2CE5232D3307009994F2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +68,16 @@
 		B08A2CC2232CF9F9009994F2 /* MVVM-1 */ = {
 			isa = PBXGroup;
 			children = (
+				B08A2CE0232D2D8F009994F2 /* ViewModel */,
 				B08A2CDA232D2B5C009994F2 /* Protocols */,
 				B08A2CD7232D2AF2009994F2 /* View */,
+				B08A2CDF232D2D20009994F2 /* Model */,
+				B08A2CE5232D3307009994F2 /* NetworkManager.swift */,
 				B08A2CC3232CF9FA009994F2 /* AppDelegate.swift */,
-				B08A2CC5232CF9FA009994F2 /* TableViewController.swift */,
 				B08A2CC7232CF9FA009994F2 /* Main.storyboard */,
 				B08A2CCA232CF9FD009994F2 /* Assets.xcassets */,
 				B08A2CCC232CF9FD009994F2 /* LaunchScreen.storyboard */,
 				B08A2CCF232CF9FD009994F2 /* Info.plist */,
-				B08A2CD5232CFEDF009994F2 /* Users.swift */,
 			);
 			path = "MVVM-1";
 			sourceTree = "<group>";
@@ -79,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B08A2CD8232D2B08009994F2 /* TableViewCell.swift */,
+				B08A2CC5232CF9FA009994F2 /* TableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,6 +98,23 @@
 				B08A2CDD232D2C94009994F2 /* TableViewViewModelProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B08A2CDF232D2D20009994F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B08A2CD5232CFEDF009994F2 /* Users.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B08A2CE0232D2D8F009994F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B08A2CE1232D2DA7009994F2 /* TableViewModel.swift */,
+				B08A2CE3232D2FDA009994F2 /* TableViewCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,11 +188,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B08A2CE6232D3307009994F2 /* NetworkManager.swift in Sources */,
 				B08A2CDC232D2B71009994F2 /* TableViewCellProtocol.swift in Sources */,
+				B08A2CE2232D2DA7009994F2 /* TableViewModel.swift in Sources */,
 				B08A2CC6232CF9FA009994F2 /* TableViewController.swift in Sources */,
 				B08A2CD9232D2B08009994F2 /* TableViewCell.swift in Sources */,
 				B08A2CD6232CFEDF009994F2 /* Users.swift in Sources */,
 				B08A2CDE232D2C94009994F2 /* TableViewViewModelProtocol.swift in Sources */,
+				B08A2CE4232D2FDA009994F2 /* TableViewCellViewModel.swift in Sources */,
 				B08A2CC4232CF9FA009994F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
