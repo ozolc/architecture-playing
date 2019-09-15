@@ -27,13 +27,13 @@ class MainRouter: RouterProtocol {
         
         switch route {
         case .detail:
-            passDataToHome(segue)
+            passDataToDetail(segue)
         }
     }
 }
 
 extension MainRouter {
-    private func passDataToHome(_ segue: UIStoryboardSegue) {
+    private func passDataToDetail(_ segue: UIStoryboardSegue) {
         let detailVC = segue.destination as! DetailViewController
         detailVC.viewModel = viewController.viewModel?.viewModelForSelectedRow()
     }
