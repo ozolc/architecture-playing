@@ -10,24 +10,33 @@ import Foundation
 
 class TableViewModel: TableViewViewModelProtocol {
     
-    let networkManager = NetworkManager()
-    let dispatchGroup = DispatchGroup()
+    let networkManager: ManagerProtocol!
+    
+    init(networkManager: ManagerProtocol, completion: @escaping (Error?) -> ()) {
+        self.networkManager = networkManager
+        fetchData { (err) in
+            if let err = err {
+                completion(err)
+            }
+            completion(nil)
+        }
+    }
     
     private var users = [Users]()
+    
     private var selectedIndexPath: IndexPath?
     
-    func fetchData(completion: @escaping() -> ()) {
-        dispatchGroup.enter()
+    func fetchData(completion: @escaping(Error?) -> ()) {
         
         networkManager.getUser({ [weak self] (user, err) in
-            guard err == nil else {
-                print("Returned an error:")
+            if let err = err {
+                completion(err)
                 return
             }
-                guard let user = user else { return }
-                self?.users.append(user)
+            guard let user = user else { return }
+            self?.users.append(user)
             
-            completion()
+            completion(nil)
         })
         
     }
@@ -37,10 +46,7 @@ class TableViewModel: TableViewViewModelProtocol {
     }
     
     func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellProtocol? {
-        
-        let user = users[indexPath.row]
-        return TableViewCellViewModel(user: user)
-        
+        return TableViewCellViewModel(user: users[indexPath.row])
     }
     
     func selectRow(atIndexPath indexPath: IndexPath) {
@@ -48,7 +54,10 @@ class TableViewModel: TableViewViewModelProtocol {
     }
     
     func viewModelForSelectedRow() -> DetailViewModelProtocol? {
-        guard let selectedIndexPath = selectedIndexPath else { return nil }
+        guard
+            let selectedIndexPath = selectedIndexPath
+            else { return nil }
+        
         return DetailViewModel(user: users[selectedIndexPath.row])
     }
     

@@ -8,8 +8,8 @@
 
 import Foundation
 
-class NetworkManager: NSObject {
-            
+class NetworkManager: ManagerProtocol {
+    
         func getUser(_ completionHandler: @escaping (_ data: Users?, _ error: Error?) -> Void) {
             guard let url = URL(string: "https://randomuser.me/api") else { return }
             let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -27,5 +27,4 @@ class NetworkManager: NSObject {
             
             task.resume()
         }
-//    }
 }

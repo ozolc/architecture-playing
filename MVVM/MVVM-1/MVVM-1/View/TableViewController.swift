@@ -14,14 +14,17 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = TableViewModel()
         
-        viewModel?.fetchData { [weak self] in
-            print("fetch Data from TableViewController")
+        viewModel = TableViewModel(networkManager: NetworkManager(), completion: { [weak self] (err) in
+            if let err = err {
+                print("Returned an error:", err.localizedDescription)
+                return
+            }
+            
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
-        }
+        })
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

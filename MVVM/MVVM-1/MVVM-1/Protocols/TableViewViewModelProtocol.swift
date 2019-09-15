@@ -15,5 +15,9 @@ protocol TableViewViewModelProtocol {
     func viewModelForSelectedRow() -> DetailViewModelProtocol?
     func selectRow(atIndexPath indexPath: IndexPath)
     
-    func fetchData(completion: @escaping() -> ())
+//    var users: Box<[Users]?> { get }
+    
+//    func reloadTableViewClosure(_: () -> ()?)
+    
+//    func fetchData(completion: @escaping() -> ())
 }
