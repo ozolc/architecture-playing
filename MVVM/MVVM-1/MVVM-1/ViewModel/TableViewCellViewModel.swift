@@ -16,7 +16,7 @@ class TableViewCellViewModel: TableViewCellProtocol {
         
         let firstName = user.results?.first?.name?.first ?? ""
         let lastName = user.results?.first?.name?.last ?? ""
-        let fullName = "\(firstName) \(lastName)"
+        let fullName = "\(firstName.capitalized) \(lastName.capitalized)"
         
         print(fullName)
         return fullName

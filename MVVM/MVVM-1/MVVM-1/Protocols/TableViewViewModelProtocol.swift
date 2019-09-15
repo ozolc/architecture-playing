@@ -11,4 +11,9 @@ import Foundation
 protocol TableViewViewModelProtocol {
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellProtocol?
+    
+    func viewModelForSelectedRow() -> DetailViewModelProtocol?
+    func selectRow(atIndexPath indexPath: IndexPath)
+    
+    func fetchData(completion: @escaping() -> ())
 }
