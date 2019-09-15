@@ -9,7 +9,6 @@
 import Foundation
 
 class TableViewModel: TableViewViewModelProtocol {
-    
     let networkManager: ManagerProtocol!
     
     init(networkManager: ManagerProtocol, completion: @escaping (Error?) -> ()) {
@@ -61,4 +60,7 @@ class TableViewModel: TableViewViewModelProtocol {
         return DetailViewModel(user: users[selectedIndexPath.row])
     }
     
+    func login(completion: () -> Void) {
+        completion()
+    }
 }

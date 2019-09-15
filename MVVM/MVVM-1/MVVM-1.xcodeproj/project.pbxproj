@@ -23,6 +23,8 @@
 		B08C6A67232E2F2300FB7284 /* DetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C6A66232E2F2300FB7284 /* DetailViewModelProtocol.swift */; };
 		B08C6A69232E304100FB7284 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C6A68232E304100FB7284 /* DetailViewModel.swift */; };
 		B08C6A6B232E51F800FB7284 /* ManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C6A6A232E51F800FB7284 /* ManagerProtocol.swift */; };
+		B08C6A71232E6C0F00FB7284 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C6A70232E6C0F00FB7284 /* MainRouter.swift */; };
+		B08C6A75232E762300FB7284 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08C6A74232E762300FB7284 /* RouterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		B08C6A66232E2F2300FB7284 /* DetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		B08C6A68232E304100FB7284 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B08C6A6A232E51F800FB7284 /* ManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerProtocol.swift; sourceTree = "<group>"; };
+		B08C6A70232E6C0F00FB7284 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		B08C6A74232E762300FB7284 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				B08A2CD8232D2B08009994F2 /* TableViewCell.swift */,
 				B08A2CC5232CF9FA009994F2 /* TableViewController.swift */,
 				B08C6A64232E2EBB00FB7284 /* DetailViewController.swift */,
+				B08C6A70232E6C0F00FB7284 /* MainRouter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 				B08A2CDD232D2C94009994F2 /* TableViewViewModelProtocol.swift */,
 				B08C6A66232E2F2300FB7284 /* DetailViewModelProtocol.swift */,
 				B08C6A6A232E51F800FB7284 /* ManagerProtocol.swift */,
+				B08C6A74232E762300FB7284 /* RouterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -205,12 +211,14 @@
 				B08A2CE2232D2DA7009994F2 /* TableViewModel.swift in Sources */,
 				B08A2CC6232CF9FA009994F2 /* TableViewController.swift in Sources */,
 				B08C6A6B232E51F800FB7284 /* ManagerProtocol.swift in Sources */,
+				B08C6A71232E6C0F00FB7284 /* MainRouter.swift in Sources */,
 				B08C6A67232E2F2300FB7284 /* DetailViewModelProtocol.swift in Sources */,
 				B08A2CD9232D2B08009994F2 /* TableViewCell.swift in Sources */,
 				B08A2CD6232CFEDF009994F2 /* Users.swift in Sources */,
 				B08C6A69232E304100FB7284 /* DetailViewModel.swift in Sources */,
 				B08A2CDE232D2C94009994F2 /* TableViewViewModelProtocol.swift in Sources */,
 				B08C6A65232E2EBB00FB7284 /* DetailViewController.swift in Sources */,
+				B08C6A75232E762300FB7284 /* RouterProtocol.swift in Sources */,
 				B08A2CE4232D2FDA009994F2 /* TableViewCellViewModel.swift in Sources */,
 				B08A2CC4232CF9FA009994F2 /* AppDelegate.swift in Sources */,
 			);

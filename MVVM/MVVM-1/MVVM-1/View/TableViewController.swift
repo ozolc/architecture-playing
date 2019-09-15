@@ -11,10 +11,16 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var viewModel: TableViewViewModelProtocol?
+    var router: RouterProtocol!
+    
+    enum Route: String {
+        case detail
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        router = MainRouter(viewController: self)
         viewModel = TableViewModel(networkManager: NetworkManager(), completion: { [weak self] (err) in
             if let err = err {
                 print("Returned an error:", err.localizedDescription)
@@ -45,23 +51,16 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         guard let viewModel = viewModel else { return }
         viewModel.selectRow(atIndexPath: indexPath)
         
-        performSegue(withIdentifier: "detailSegue", sender: nil)
+        self.router.navigate(to: .detail)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard
-            let identifier = segue.identifier,
-            let viewModel = viewModel
-            else { return }
         
-        if identifier == "detailSegue" {
-            if let dvc = segue.destination as? DetailViewController {
-                dvc.viewModel = viewModel.viewModelForSelectedRow()
-            }
-        }
+        router.prepare(for: segue)
     }
     
 }
