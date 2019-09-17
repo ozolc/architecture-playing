@@ -14,17 +14,16 @@ class UserViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
     
-    private let userPresenter = UserPresenter(userService: UserService())
+    private var userPresenter: UserPresenterProtocol!
     private var usersToDisplay = [UserViewData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userPresenter = UserPresenter(view: self)
+        
         tableView?.dataSource = self
         activityIndicator?.hidesWhenStopped = true
-        
-        userPresenter.attachView(view: self)
-        userPresenter.getUsers()
     }
 }
 

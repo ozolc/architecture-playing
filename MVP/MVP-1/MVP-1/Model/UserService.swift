@@ -8,7 +8,11 @@
 
 import Foundation
 
-class UserService {
+protocol UserServiceProtocol {
+    func getUsers(callback: @escaping([User]) -> Void)
+}
+
+class UserService: UserServiceProtocol {
     
     func getUsers(callback: @escaping ([User]) -> Void) {
         let users = [

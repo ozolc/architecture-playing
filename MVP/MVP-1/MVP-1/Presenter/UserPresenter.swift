@@ -6,35 +6,33 @@
 //  Copyright © 2019 Maksim Nosov. All rights reserved.
 //
 
+protocol UserPresenterProtocol {
+    func getUsers()
+}
+
 import Foundation
 
-class UserPresenter {
-    private let userService: UserService
-    weak private var userView: UserViewProtocol?
+class UserPresenter: UserPresenterProtocol {
+    private let localUserService: UserServiceProtocol!
+    weak private var view: UserViewProtocol?
     
-    init(userService: UserService) {
-        self.userService = userService
-    }
-    
-    func attachView(view: UserViewProtocol) {
-        userView = view
-    }
-    
-    func detachView() {
-        userView = nil
+    init(view: UserViewProtocol) {
+        self.view = view
+        localUserService = UserService()
+        getUsers()
     }
     
     func getUsers() {
-        self.userView?.startLoading()
-        userService.getUsers { [weak self] (users) in
-            self?.userView?.finishLoading()
-            if (users.count == 0) {
-                self?.userView?.setEmptyUsers()
+        self.view?.startLoading()
+        localUserService.getUsers { [weak self] (users) in
+            self?.view?.finishLoading()
+            if users.count == 0 {
+                self?.view?.setEmptyUsers()
             } else {
                 let mappedUsers = users.map {
                     return UserViewData(name: "\($0.firstName) \($0.lastName)", age: "\($0.age) years")
                 }
-                self?.userView?.setUsers(users: mappedUsers)
+                self?.view?.setUsers(users: mappedUsers)
             }
         }
     }
